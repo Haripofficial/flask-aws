@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '/var/www/html/flaskapp')
+sys.path.insert(0, '/var/www/html/flask-aws')
 
-from flaskapp import app as application
+from flask-aws import app as application
 
