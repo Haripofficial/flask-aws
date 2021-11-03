@@ -1,11 +1,11 @@
 version: 2.1
 jobs:
   build:
-    machine:
-      image: ubuntu-2004:202010-01 
-
-      steps:
-        -run:
+    docker:
+      - image: cimg/base:2021.10
+    steps:
+      - checkout
+      - run:
           name: Basic-setup
           command: |
             sudo apt-get update
@@ -17,7 +17,7 @@ jobs:
 #           git config --global user.name "hari"
 #           git config --global user.email hariprasadp@qburst.com
 
-        -run:
+      - run:
           name: Flask-app-file
           command: |
             git clone git@github.com:Haripofficial/flask-aws.git
