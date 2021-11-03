@@ -11,7 +11,7 @@ jobs:
             sudo apt-get update
             sudo apt-get install apache2
             sudo apt-get install libapache2-mod-wsgi-py3
-            sudo apt-get install python-pip
+            sudo apt-get install python3-pip
             sudo pip install flask
             sudo apt install git
 #           git config --global user.name "hari"
