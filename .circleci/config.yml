@@ -1,0 +1,31 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202010-01 
+
+      steps:
+        -run:
+          name: Basic-setup
+          command: |
+            sudo apt-get update
+            sudo apt-get install apache2
+            sudo apt-get install libapache2-mod-wsgi
+            sudo apt-get install python-pip3
+            sudo pip3 install flask
+            sudo apt install git
+#           git config --global user.name "hari"
+#           git config --global user.email hariprasadp@qburst.com
+
+        -run:
+          name: Flask-app-file
+          command: |
+            git clone git@github.com:Haripofficial/flask-aws.git
+            sudo ln -sT ~/flask-aws /var/www/html/flask-aws
+            cat default.conf >> 000-default.conf 
+            sudo service apache2 restart
+
+
+
+
+              
